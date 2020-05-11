@@ -18,6 +18,9 @@ inputs:
   commit_sha:
     description: "Commit SHA"
     required: true
+  before_sha:
+    description: "SHA of the previous commit"
+    required: true
 
 runs:
   using: 'docker'
