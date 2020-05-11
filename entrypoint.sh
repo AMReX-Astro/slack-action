@@ -1,12 +1,12 @@
 #!/bin/sh
 set -eu
 
-if test -z "$INPUTS_SLACK_WEBHOOK"; then
+if test -z "$INPUT_SLACK_WEBHOOK"; then
   echo "Set the SLACK_WEBHOOK variable."
   exit 1
 fi
 
 curl -X POST \
      -H "Content-type: application/json" \
-     -d "text=$INPUTS_MESSAGE" \
-     $INPUTS_SLACK_WEBHOOK
+     -d "text=$INPUT_MESSAGE" \
+     $INPUT_SLACK_WEBHOOK
