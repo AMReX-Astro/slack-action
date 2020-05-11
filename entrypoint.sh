@@ -6,7 +6,4 @@ if test -z "$INPUT_SLACK_WEBHOOK"; then
   exit 1
 fi
 
-curl -X POST \
-     -H "Content-type: application/json" \
-     -d "text=$INPUT_MESSAGE" \
-     $INPUT_SLACK_WEBHOOK
+curl -X POST -H "Content-type: application/json" --data '{"text":$INPUT_MESSAGE}' $INPUT_SLACK_WEBHOOK
