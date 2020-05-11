@@ -6,7 +6,11 @@ if test -z "$INPUT_SLACK_WEBHOOK"; then
   exit 1
 fi
 
-SLACK_PAYLOAD='{"text":"'$INPUT_MESSAGE'"}'
+git checkout $GITHUB_HEAD_REF
+
+MESSAGE=$(git log --format=%B -n 1 $GITHUB_SHA | head -1)
+
+SLACK_PAYLOAD='{"text":"'$MESSAGE'"}'
 
 echo "PAYLOAD = $SLACK_PAYLOAD"
 
