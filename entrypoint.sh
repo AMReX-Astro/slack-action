@@ -10,4 +10,4 @@ SLACK_PAYLOAD='{"text":"$INPUT_MESSAGE"}'
 
 echo "PAYLOAD = $SLACK_PAYLOAD"
 
-curl -X POST -H "Content-type: application/json" --data '{"text":"testing"}' $INPUT_SLACK_WEBHOOK
+curl -X POST -H 'Content-type: application/json' --data '{"text":"testing"}' $INPUT_SLACK_WEBHOOK
