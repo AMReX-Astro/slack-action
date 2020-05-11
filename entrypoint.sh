@@ -6,7 +6,7 @@ if test -z "$INPUT_SLACK_WEBHOOK"; then
   exit 1
 fi
 
-git checkout $GITHUB_HEAD_REF
+/usr/bin/git checkout $GITHUB_HEAD_REF
 
 MESSAGE=$(git log --format=%B -n 1 $GITHUB_SHA | head -1)
 
