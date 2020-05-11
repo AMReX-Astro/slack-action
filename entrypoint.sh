@@ -10,7 +10,7 @@ fi
 
 echo '{"attachments": [{"mrkdwn_in": ["text"],"author_name": "'"$GITHUB_ACTOR"'","author_link": "https://github.com/'"$GITHUB_ACTOR"'","title": "1 new commit pushed to '"$GITHUB_HEAD_REF"'","title_link": "'"$INPUT_PR_LINK"'","text": "`'"${GITHUB_SHA::8}"'` - '"$INPUT_MESSAGE"'"} ]}'
 
-curl -X POST -H "Content-type: application/json" --data '{"attachments": [{"mrkdwn_in": ["text"],"author_name": "'"$GITHUB_ACTOR"'","author_link": "https://github.com/'"$GITHUB_ACTOR"'","title": "1 new commit pushed to '"$GITHUB_HEAD_REF"'","title_link": "'"$INPUT_PR_LINK"'","text": "`'"${GITHUB_SHA::8}"'` - '"$INPUT_MESSAGE"'"} ]}' $INPUT_SLACK_WEBHOOK
+curl -X POST -H "Content-type: application/json" --data '{"attachments": [{"mrkdwn_in": ["text"], "color": "#000000", "author_name": "'"$GITHUB_ACTOR"'","author_link": "https://github.com/'"$GITHUB_ACTOR"'","author_icon": "'"$INPUT_AUTHOR_AVATAR"'", "title": "[1 new commit]('"$INPUT_PR_LINK"') pushed to `'"$GITHUB_HEAD_REF"'`","text": "`'"${GITHUB_SHA::8}"'` - '"$INPUT_MESSAGE"'"} ]}' $INPUT_SLACK_WEBHOOK
 
 
 # {
@@ -19,6 +19,7 @@ curl -X POST -H "Content-type: application/json" --data '{"attachments": [{"mrkd
 #             "mrkdwn_in": ["text"],
 #             "author_name": "'"$GITHUB_ACTOR"'",
 #             "author_link": "https://github.com/'"$GITHUB_ACTOR"'",
+#             "author_icon": "'"$INPUT_AUTHOR_AVATAR"'"
 #             "title": "1 new commit pushed to '"$GITHUB_HEAD_REF"'",
 #             "title_link": "'"$INPUT_PR_LINK"'",
 #             "text": "'"${GITHUB_SHA::8}"'" - '"$INPUT_MESSAGE"'"

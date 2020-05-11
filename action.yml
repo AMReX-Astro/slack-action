@@ -13,6 +13,10 @@ inputs:
     description: "link to PR"
     required: false
     default: ""
+  author_avatar:
+    description: "get author avatar"
+    required: false 
+    default: ""
 
 runs:
   using: 'docker'
