@@ -4,8 +4,7 @@ author: AMReX-Astro
 inputs:
   slack_webhook:
     description: "URL for slack incoming webhook"
-    required: false 
-    default: ${{ secrets.SLACK_WEBHOOK }}
+    required: true
   message:
     description: "notification message"
     required: false 
