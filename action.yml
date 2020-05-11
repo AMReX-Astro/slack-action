@@ -11,12 +11,13 @@ inputs:
     default: ""
   pr_link: 
     description: "link to PR"
-    required: false
-    default: ""
+    required: true
   author_avatar:
     description: "get author avatar"
-    required: false 
-    default: ""
+    required: true
+  commit_sha:
+    description: "Commit SHA"
+    required: true
 
 runs:
   using: 'docker'
