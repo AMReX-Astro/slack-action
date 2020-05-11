@@ -9,6 +9,10 @@ inputs:
     description: "notification message"
     required: false 
     default: ""
+  pr_link: 
+    description: "link to PR"
+    required: false
+    default: ""
 
 runs:
   using: 'docker'
