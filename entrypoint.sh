@@ -1,13 +1,12 @@
 #!/bin/sh
 set -eu
 
-if test -z "$SLACK_BOT_TOKEN"; then
-  echo "Set the SLACK_BOT_TOKEN secret."
+if test -z "$INPUTS_SLACK_WEBHOOK"; then
+  echo "Set the SLACK_WEBHOOK variable."
   exit 1
 fi
 
 curl -X POST \
      -H "Content-type: application/json" \
-     -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
-     -d "$*" \
-     https://slack.com/api/chat.postMessage
+     -d "text=$INPUTS_MESSAGE" \
+     $INPUTS_SLACK_WEBHOOK

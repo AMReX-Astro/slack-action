@@ -1,0 +1,16 @@
+name: Slack action
+description: Pushes notifications to slack
+author: AMReX-Astro
+inputs:
+  slack_webhook:
+    description: "URL for slack incoming webhook"
+    required: false 
+    default: ${{ secrets.SLACK_WEBHOOK }}
+  message:
+    description: "notification message"
+    required: false 
+    default: ""
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
